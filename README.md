@@ -1,9 +1,9 @@
-# mern-setup based on [book](https://subscription.packtpub.com/book/web_development/9781839215414)
+# mern-setup backed and frontend based on [book](https://subscription.packtpub.com/book/web_development/9781839215414)
 
 ## What you need to run this code
 
-    Node
-    NPM or Yarn
+    ## Node
+    ## NPM or Yarn
     MongoDB
 
 ## How to run this code
