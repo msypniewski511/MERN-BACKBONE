@@ -40,7 +40,12 @@ const userByID = async (req, res, next, id) => {
 		});
 	}
 };
-const read = (req, res) => {};
+const read = (req, res) => {
+	req.profile.hashed_password = undefined;
+	req.profile.salt = undefined;
+	return res.json(req.profile);
+};
+
 const update = (req, res, next) => {};
 const remove = (req, res, next) => {};
 
