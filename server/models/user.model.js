@@ -1,6 +1,7 @@
 // using mongose we can add built-in validation for the fields and incorporate business
 // logic such as password encryption, authentication, and custom validation.
 import mongoose from 'mongoose';
+import crypto from 'crypto';
 
 const UserSchema = new mongoose.Schema({
 	name: {
@@ -15,16 +16,16 @@ const UserSchema = new mongoose.Schema({
 		match: [/.+\@.+\..+/, 'Please fill a valid email address'],
 		required: 'Email is required',
 	},
+	hashed_password: {
+		type: String,
+		required: 'Password is not required',
+	},
+	salt: String,
 	created: {
 		type: Date,
 		default: Date.now,
 	},
 	updated: Date,
-	hashed_password: {
-		type: String,
-		required: 'Password is required',
-	},
-	salt: String,
 });
 
 UserSchema.virtual('password')

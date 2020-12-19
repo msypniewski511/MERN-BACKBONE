@@ -18,9 +18,9 @@ app.use(cors());
 
 app.use('/', authRoutes);
 app.use('/', userRoutes);
-app.get('/', (req, res) => {
-	res.status(200).send(Template());
-});
+// app.get('/', (req, res) => {
+// 	res.status(200).send(Template());
+// });
 
 app.use((err, req, res, next) => {
 	if (err.name === 'UnauthorizedError') {
